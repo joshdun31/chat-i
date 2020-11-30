@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+//Colors
+$color1:rgba(4, 1, 5,0.95);
+$color2: rgb(12, 135, 200);
+$color3:rgb(11, 115, 200);
+$color4:rgba(6, 12, 71,0.9);
+
+//variables
+$form-height:45px;
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: 0;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: $color1;
+    flex-direction: column;
+    .heading{
+        font-size: 1.2rem;
+        color: #ffffff;
+    }
+    .form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        margin: 1rem;
+        form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            input{
+                width: 15rem;
+                height: 2.7rem;
+                padding: 0.6rem 0.8rem;
+                margin: 0.5rem auto;
+                border-radius: 0.4rem;
+                box-shadow: 2px 3px 3px 2px rgba(200, 200, 200, 0.25);
+            }
+            button{
+                width: 5rem;
+                height: 2rem;
+                margin: 1rem;
+                background-color:$color2 ;
+                box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+                font-size: 1.1rem;
+                color: #ffffff;
+                border-radius: 0.2rem;
+    
+                &:hover{
+                    box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.15);
+                    cursor: pointer;
+                    color: #ffffff;
+                    background-color: $color3;
+                }
+            }
+        }
+    }
+}
+
+.chat-box{
+    background-color: $color1;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+
+    .user-info{
+        width: 40%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        overflow-y: auto;
+    }
+    .chat-layout{
+        background-color: #fdfdfd;
+        width: 60%;
+        height: 100vh;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.15);
+        position: relative;
+        flex-direction: column;
+
+        .chat-room{
+            width: 100%;
+            background-color: rgba(12, 135, 200,0.75);
+            display: flex;
+            align-items: center;
+            h2{
+                font-size: 1.5rem;
+                margin-left: 0.7rem;
+                color: #ffffff;
+                padding: 0.5rem 0.3rem 0.5rem 0.5rem;
+            }
+            .green-circle{
+                background-color: rgba(10,220,50,0.9);
+                width: 0.6rem;
+                height: 0.6rem;
+                border-radius: 0.3rem;
+            }
+        }
+        .chat-message{
+            width: 100%;
+            height: 85%;
+            background-color: #fdfdfd;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .chat-form{
+            width: 100%;
+            height: $form-height;
+            position: relative;
+            bottom: 0%;
+            left: 0%;
+            height: 2.7rem;
+            box-shadow: 0 -1px 4px 2px rgba(0, 0, 0, 0.2);
+            // margin: 0rem 2%;
+
+            form{
+                width: 100%;
+                height: $form-height;
+                position: relative;
+                input{
+                    width: 86%;
+                    height: $form-height;
+                    padding: 1rem 1rem;
+                    box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.1);
+                    // border-radius: 5px;
+                }
+                button{
+                    width: 14%;
+                    height: $form-height;
+                    // margin: 2%;
+                    background-color: rgb(12, 132, 182);
+                    box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+                    font-size: 1.1rem;
+                    color: #ffffff;
+                    // border-radius: 0.2rem;
+    
+                    &:hover{
+                        box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.15);
+                        cursor: pointer;
+                        color: #ffffff;
+                        background-color: rgb(11, 152, 196);
+                    }
+                }
+            }
+        }
+    }
+}
+.chat-text
+{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+    span{
+        display: flex;
+        font-size: 0.75rem;
+    }
+    .chat-text-inside{
+        align-items: center;
+        width: max-content;
+        max-width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.right{
+    justify-content: flex-end;
+}
+.left{
+    justify-content: flex-start;
+}
+.center{
+    justify-content: center;
+}
+
+@media screen and (max-width:900px) and (min-width:550px){
+    .chat-box{
+        .user-info{
+            width:40%
+        }
+        .chat-layout{
+            width: 60%;
+        }
+    }
+}
+@media screen and (max-width:550px){
+    .chat-box{
+        .user-info{
+            width:0%
+        }
+        .chat-layout{
+            width: 100%;
+        }
+    }
+}
